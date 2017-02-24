@@ -11,3 +11,6 @@ sudo /usr/local/java/bin/jmap -F -histo <pid> |more
 
 连接本机服务器ip列表检查
 ss -n|awk '{print $5}'|cut -d: -f1|sort -n|uniq
+
+socket连接分析
+netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"\t",state[key]}'
