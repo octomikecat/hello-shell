@@ -8,3 +8,6 @@ sudo -u username /usr/local/java/bin/jstack -l <pid> > ~/<pid>.log
 
 对象数量
 sudo /usr/local/java/bin/jmap -F -histo <pid> |more
+
+连接本机服务器ip列表检查
+ss -n|awk '{print $5}'|cut -d: -f1|sort -n|uniq
