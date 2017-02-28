@@ -1,3 +1,9 @@
+查询本机所有ipv4地址列表
+ifconfig | awk '$1 == "inet" {print $2}' | cut -d: -f2
+
+查询本机某一块网卡
+ifconfig eth0 | awk '$1 == "inet" {print $2}' | cut -d: -f2
+
 连接本机服务器ip列表检查
 ss -n|awk '{print $5}'|cut -d: -f1|sort -n|uniq
 
